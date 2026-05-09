@@ -298,7 +298,7 @@ h6 {
   background-image: url('../public/images/aboutus_background.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
