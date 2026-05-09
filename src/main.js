@@ -1,5 +1,3 @@
-import './style.css';
-
 document.addEventListener('DOMContentLoaded', () => {
     // Header scroll effect
     const header = document.querySelector('.header');
