@@ -286,8 +286,7 @@ h6 {
 
 @media (max-width: 768px) {
   .hero-light-1 {
-    display: block;
-    /* Show on mobile */
+
     left: -26%;
     top: -50px;
     width: 300px;
@@ -1105,95 +1104,398 @@ h6 {
 }
 
 /* =========================================
-   Contact Section
+   Dining Section
    ========================================= */
-.contact-section {
+.dining-section {
+  background-color: #0e0e0e;
+  color: #fff;
   padding: 8rem 0;
-  background-color: var(--color-text-dark);
-  color: var(--color-text-light);
-  text-align: center;
 }
 
-.contact-container {
-  max-width: 1100px;
+.dining-container {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-}
-
-.contact-section .section-title {
-  color: var(--color-bg-light);
-  margin-bottom: 4rem;
-}
-
-.contact-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
-  text-align: left;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
 }
 
-.contact-info {
+/* Image Grid */
+.dining-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 180px);
+  gap: 10px;
 }
 
-.info-item h3 {
-  color: #ff6b00;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  letter-spacing: 2px;
+.dining-img {
+  overflow: hidden;
+  border-radius: 4px;
 }
 
-.info-item p {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.8;
+.dining-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-.contact-social h3 {
-  color: #ff6b00;
-  font-size: 1.2rem;
+.dining-img:hover img {
+  transform: scale(1.08);
+}
+
+/* Content Side */
+.dining-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #c9a96e;
   margin-bottom: 1.5rem;
-  letter-spacing: 2px;
 }
 
-.social-links {
+.dining-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.dining-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  opacity: 0.55;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.dining-text:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .dining-section {
+    padding: 5rem 0;
+  }
+
+  .dining-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .dining-gallery {
+    grid-template-rows: repeat(2, 140px);
+  }
+
+  .dining-title {
+    font-size: 2rem;
+  }
+}
+
+/* =========================================
+   Contact Section
+   ========================================= */
+.contact-page-section {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Top Info Bar */
+.contact-info-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-info-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #c9a96e;
+  margin-bottom: 1rem;
+}
+
+.contact-info-col p {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  opacity: 0.6;
+  font-weight: 300;
+}
+
+.contact-booking-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #c9a96e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+}
+
+.contact-booking-link:hover {
+  opacity: 0.7;
+}
+
+/* Bottom: Form + Image */
+.contact-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Form Side */
+.contact-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.contact-form-desc {
+  font-size: 0.9rem;
+  opacity: 0.5;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.social-link {
-  color: var(--color-text-light);
-  text-decoration: none;
-  font-weight: 600;
+.contact-form input,
+.contact-form textarea {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1rem 1.2rem;
+  border-radius: 0;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
+  color: #fff;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.social-link:hover {
-  color: #ff6b00;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #c9a96e;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 300;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #c9a96e;
+  border: none;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.contact-submit-btn:hover {
+  background: #b8944f;
+  box-shadow: 0 5px 20px rgba(201, 169, 110, 0.3);
+}
+
+/* Image Side */
+.contact-image-side {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.contact-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .contact-section {
-    padding: 4rem 0;
+  .contact-info-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 2rem;
   }
 
-  .contact-content {
+  .contact-info-center {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+
+  .contact-bottom {
     grid-template-columns: 1fr;
+    padding: 3rem 2rem;
     gap: 3rem;
   }
 
-  .contact-info {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .contact-form-title {
+    font-size: 1.8rem;
   }
 
-  .contact-section .section-title {
-    font-size: 3rem !important;
-    margin-bottom: 2.5rem;
+  .contact-image-side {
+    min-height: 300px;
+  }
+}
+
+/* =========================================
+   Footer
+   ========================================= */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  padding: 4rem 0 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #c9a96e;
+  font-weight: 400;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.footer-nav a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #c9a96e;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-social-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-social-link:hover {
+  color: #c9a96e;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  opacity: 0.4;
+  font-weight: 300;
+}
+
+.footer-credit {
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
   }
 }
