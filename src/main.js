@@ -59,29 +59,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger-menu');
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelectorAll('.nav-link');
+    const navBackdrop = document.querySelector('.nav-backdrop');
+    const bookBtn = document.querySelector('.book-btn');
+
+    function setMenuOpen(isOpen) {
+        if (!hamburger || !nav || !header) return;
+        hamburger.classList.toggle('active', isOpen);
+        nav.classList.toggle('active', isOpen);
+        header.classList.toggle('menu-open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (navBackdrop) {
+            navBackdrop.classList.toggle('active', isOpen);
+            navBackdrop.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        }
+    }
+
+    function closeMenu() {
+        setMenuOpen(false);
+    }
 
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('active');
-            header.classList.toggle('menu-open');
-            
-            // Prevent body scroll when menu is open
-            if (nav.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
+            setMenuOpen(!nav.classList.contains('active'));
         });
 
-        // Close menu when a link is clicked
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
-                header.classList.remove('menu-open');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', closeMenu);
+        });
+
+        if (bookBtn) {
+            bookBtn.addEventListener('click', closeMenu);
+        }
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', closeMenu);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && nav.classList.contains('active')) {
+                closeMenu();
+            }
         });
     }
 });

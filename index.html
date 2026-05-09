@@ -25,7 +25,8 @@
       <img src="./public/images/light .png" alt="Light" class="hero-light hero-light-3">
       <img src="./public/images/light2 (1).png" alt="Light" class="hero-light hero-light-2">
       <header class="header">
-        <button class="hamburger-menu" aria-label="Menu">
+        <div class="nav-backdrop" aria-hidden="true"></div>
+        <button type="button" class="hamburger-menu" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
           <span></span>
           <span></span>
           <span></span>
@@ -33,7 +34,7 @@
         <div class="logo">
           <img src="./public/images/logo.png" alt="Tangerine" class="logo-img" />
         </div>
-        <nav class="nav">
+        <nav id="site-nav" class="nav" role="navigation" aria-label="Main">
           <a href="#about" class="nav-link">ABOUT US</a>
           <a href="#signature" class="nav-link">SIGNATURE</a>
           <a href="#dining" class="nav-link">EXPERIENCE</a>
@@ -299,43 +300,43 @@
 
     <!-- Contact Section -->
     <section id="contact" class="contact-page-section">
-      <!-- Top Info Bar -->
-      <div class="contact-info-bar">
-        <div class="contact-info-col">
-          <h3>Lunch Time</h3>
-          <p>Monday to Sunday</p>
-          <p>11:00 am – 3:30pm</p>
-        </div>
-        <div class="contact-info-col contact-info-center">
-          <h3>Contact Info</h3>
-          <p>Restaurant St, Delicious City, India</p>
-          <p>Email : hello@tangerineresto.com</p>
-          <a href="tel:+911234567890" class="contact-booking-link">Booking : +91-123-456-7890</a>
-        </div>
-        <div class="contact-info-col">
-          <h3>Dinner Time</h3>
-          <p>Monday to Sunday</p>
-          <p>5:30 pm – 11:30 pm</p>
-        </div>
-      </div>
-
-      <!-- Bottom: Form + Image -->
-      <div class="contact-bottom">
-        <div class="contact-form-side">
-          <h2 class="contact-form-title">Send us a message</h2>
-          <p class="contact-form-desc">Have a question about our service? We're here to help, contact us today.</p>
-          <form class="contact-form" action="#" method="POST" id="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Phone Number">
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit" class="contact-submit-btn">SEND YOUR MESSAGE</button>
-          </form>
-        </div>
-        <div class="contact-image-side">
-          <img
-            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-            alt="Restaurant Interior">
+      <div class="contact-unified">
+        <div class="contact-split">
+          <div class="contact-split-list">
+            <article class="contact-list-item contact-list-item--lunch">
+              <h3 class="contact-list-heading">Lunch Time</h3>
+              <p class="contact-list-body">Monday to Sunday</p>
+              <p class="contact-list-body">11:00 am – 3:30pm</p>
+            </article>
+            <article class="contact-list-item contact-list-item--dinner">
+              <h3 class="contact-list-heading">Dinner Time</h3>
+              <p class="contact-list-body">Monday to Sunday</p>
+              <p class="contact-list-body">5:30 pm – 11:30 pm</p>
+            </article>
+            <div class="contact-row-bottom">
+              <div class="contact-social-block">
+                <h3 class="contact-list-heading contact-social-heading">Social media</h3>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="contact-social-entry">WhatsApp</a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="contact-social-entry">Instagram</a>
+              </div>
+              <article class="contact-list-item contact-list-item--contact">
+                <h3 class="contact-list-heading">Contact Info</h3>
+                <p class="contact-list-body">Restaurant St, Delicious City, India</p>
+                <p class="contact-list-body">Email : <a href="mailto:hello@tangerineresto.com" class="contact-list-link">hello@tangerineresto.com</a></p>
+                <a href="tel:+911234567890" class="contact-list-booking">Booking : +91-123-456-7890</a>
+              </article>
+            </div>
+          </div>
+          <div class="contact-split-form">
+            <h2 class="contact-form-title">Send us a message</h2>
+            <form class="contact-form" action="#" method="POST" id="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <input type="tel" name="phone" placeholder="Phone Number">
+              <textarea name="message" placeholder="Message" required></textarea>
+              <button type="submit" class="contact-submit-btn">Send</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
