@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburger.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
         if (navBackdrop) {
-            navBackdrop.classList.toggle('active', isOpen);
             navBackdrop.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
         }
     }

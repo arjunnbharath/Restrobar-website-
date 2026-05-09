@@ -25,8 +25,7 @@
       <img src="./public/images/light .png" alt="Light" class="hero-light hero-light-3">
       <img src="./public/images/light2 (1).png" alt="Light" class="hero-light hero-light-2">
       <header class="header">
-        <div class="nav-backdrop" aria-hidden="true"></div>
-        <button type="button" class="hamburger-menu" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <button class="hamburger-menu" aria-label="Menu">
           <span></span>
           <span></span>
           <span></span>
@@ -34,18 +33,29 @@
         <div class="logo">
           <img src="./public/images/logo.png" alt="Tangerine" class="logo-img" />
         </div>
-        <nav id="site-nav" class="nav" role="navigation" aria-label="Main">
-          <a href="#about" class="nav-link">ABOUT US</a>
-          <a href="#signature" class="nav-link">SIGNATURE</a>
-          <a href="#dining" class="nav-link">EXPERIENCE</a>
-          <a href="#contact" class="nav-link">CONTACT</a>
+        <nav class="nav">
+          <div class="nav-row">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#signature" class="nav-link">SIGNATURE</a>
+          </div>
+          <div class="nav-row">
+            <a href="menu.html" class="nav-link">OUR MENU</a>
+            <a href="#dining" class="nav-link">EXPERIENCE</a>
+          </div>
+          <div class="nav-row">
+            <a href="#contact" class="nav-link">CONTACT</a>
+          </div>
+          <div class="nav-row nav-row--social">
+            <a href="https://wa.me/1234567890" class="nav-link nav-link--social" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://instagram.com/" class="nav-link nav-link--social" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
         </nav>
         <a href="booktable.html" class="btn btn-outline book-btn">BOOK A TABLE</a>
       </header>
 
       <div class="hero-content">
         <h1 class="hero-title">TANGERINE</h1>
-        <a href="#explore" class="btn btn-outline-large">EXPLORE OUR MENU</a>
+        <a href="menu.html" class="btn btn-outline-large">EXPLORE OUR MENU</a>
       </div>
 
       <!-- Food Composition on the table -->
@@ -236,11 +246,94 @@
       </div>
 
       <div class="section-footer animate-on-scroll">
-        <a href="#menu" class="btn btn-outline-dark">
+        <a href="menu.html" class="btn btn-outline-dark">
           <img src="./public/images/logo.png" alt="" class="btn-logo">
           VIEW FULL MENU
           <img src="./public/images/logo.png" alt="" class="btn-logo">
         </a>
+      </div>
+    </section>
+
+    <!-- Coffee showcase (below signature) -->
+    <section class="coffee-showcase" aria-label="Coffee highlights">
+      <div class="coffee-showcase-hero">
+        <div class="coffee-showcase-hero__bg" aria-hidden="true"></div>
+        <div class="coffee-showcase-hero__inner animate-on-scroll">
+          <div class="coffee-showcase-hero__copy">
+            <h2 class="coffee-showcase-hero__title">Savor the Perfect Brew!</h2>
+            <p class="coffee-showcase-hero__lede">
+              Fresh beans, careful extraction, and baristas who dial in every shot—so your cup tastes exactly as it
+              should.
+            </p>
+            <a href="menu.html" class="coffee-showcase-btn coffee-showcase-btn--cream">Order favorites</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="coffee-showcase-featured">
+        <div class="coffee-showcase-featured__text animate-on-scroll">
+          <p class="coffee-showcase-eyebrow">Featured</p>
+          <h3 class="coffee-showcase-featured__title">Why Choose Us?</h3>
+          <p class="coffee-showcase-featured__desc">
+            We roast in small batches, train our team on specialty standards, and build a menu that pairs bold coffee
+            with plates made for lingering—morning, noon, or late night.
+          </p>
+          <a href="menu.html" class="coffee-showcase-btn coffee-showcase-btn--dark">View coffee menu</a>
+        </div>
+        <div class="coffee-showcase-featured__media animate-on-scroll">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+            alt="Coffee cup and beans from above" width="900" height="900" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="coffee-showcase-products">
+        <article class="coffee-product-card animate-on-scroll">
+          <div class="coffee-product-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1714415632243-079d9a86071a?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80"
+              alt="Espresso being pulled into a cup" width="640" height="480" loading="lazy" />
+          </div>
+          <div class="coffee-product-card__body">
+            <h4 class="coffee-product-card__title">Espresso</h4>
+            <p class="coffee-product-card__desc">Double ristretto-style shot with a caramel crema.</p>
+          </div>
+        </article>
+        <article class="coffee-product-card animate-on-scroll">
+          <div class="coffee-product-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80"
+              alt="Latte with foam art" width="640" height="480" loading="lazy" />
+          </div>
+          <div class="coffee-product-card__body">
+            <h4 class="coffee-product-card__title">Latte</h4>
+            <p class="coffee-product-card__desc">Silky microfoam, espresso-forward balance.</p>
+          </div>
+        </article>
+        <article class="coffee-product-card coffee-product-card--cta animate-on-scroll">
+          <div class="coffee-product-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1598679253544-2c97992403ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80"
+              alt="Cold brew coffee in a glass" width="640" height="480" loading="lazy" />
+          </div>
+          <div class="coffee-product-card__body">
+            <h4 class="coffee-product-card__title">Cold Brew</h4>
+            <p class="coffee-product-card__desc">Slow-steeped, smooth, and refreshing over ice.</p>
+            <a href="menu.html" class="coffee-showcase-btn coffee-showcase-btn--pill-dark">Visit today</a>
+          </div>
+        </article>
+        <article class="coffee-product-card coffee-product-card--cta animate-on-scroll">
+          <div class="coffee-product-card__image">
+            <img
+              src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&auto=format&fit=crop&w=640&q=80"
+              alt="Filter coffee in a cup" width="640" height="480" loading="lazy" />
+          </div>
+          <div class="coffee-product-card__body">
+            <h4 class="coffee-product-card__title">Coffee</h4>
+            <p class="coffee-product-card__desc">House blend or single origin, brewed to order.</p>
+            <a href="booktable.html" class="coffee-showcase-btn coffee-showcase-btn--pill-cream">Visit today</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -347,11 +440,15 @@
         <div class="footer-top">
           <div class="footer-brand">
             <img src="./public/images/logo.png" alt="Tangerine" class="footer-logo">
-            <p class="footer-tagline">Coffee & Dining</p>
+            <div class="footer-brand-copy">
+              <p class="footer-tagline">Coffee & Dining</p>
+              <p class="footer-desc">Open daily for espresso, plates, and pours—morning through late night. Walk-ins welcome; book ahead for weekends.</p>
+            </div>
           </div>
           <nav class="footer-nav">
             <a href="#about">About Us</a>
             <a href="#signature">Signature</a>
+            <a href="menu.html">Our Menu</a>
             <a href="#contact">Contact</a>
             <a href="booktable.html">Book a Table</a>
           </nav>
@@ -362,7 +459,7 @@
         </div>
         <div class="footer-divider"></div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Tangerine Restrobar. All rights reserved.</p>
+          <p>&copy; 2026 Tangerine Restrobar. All rights reserved.</p>
           <p class="footer-credit">Crafted with ♥ for great taste</p>
         </div>
       </div>
