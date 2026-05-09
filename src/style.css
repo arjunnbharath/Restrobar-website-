@@ -294,18 +294,32 @@ h6 {
    ========================================= */
 .about-section {
   position: relative;
-  padding: 8rem 0;
-  background-image: url('../public/images/aboutus_background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  padding: 12rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  /* Use clip-path to create a "window" for the fixed background */
+  clip-path: inset(0 0 0 0);
+  color: #fff;
 }
 
 .about-section::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../public/images/aboutus_background.jpg');
+  background-size: cover;
+  background-position: right;
+  z-index: -1;
+  /* Ensure it doesn't affect layout */
+  pointer-events: none;
+}
+
+.about-section::after {
   content: '';
   position: absolute;
   top: 0;
@@ -688,37 +702,41 @@ h6 {
     margin-top: 1.5rem;
   }
 
+  .hero-content {
+    padding-top: 1.5rem;
+  }
+
   /* Food Composition Mobile Arrangement */
   .comp-burger {
-    width: 64%;
-    left: -5%;
-    bottom: 0%;
+    width: 84%;
+    left: 1%;
+    bottom: 16%;
   }
 
   .comp-coke {
     width: 15%;
     left: -4%;
-    bottom: 22%;
+    bottom: 28%;
   }
 
   .comp-juice {
     width: 12%;
     right: auto;
-    left: 74%;
-    bottom: 30%;
+    left: 77%;
+    bottom: 26%;
   }
 
   .comp-cake {
-    width: 25%;
-    left: 42%;
-    bottom: 16%;
+    width: 55%;
+    left: -2%;
+    bottom: -3%;
   }
 
   .comp-pizza {
-    width: 5%;
+    width: 45%;
     left: auto;
-    right: -47%;
-    bottom: -18%;
+    right: -39%;
+    bottom: -12%;
   }
 }
 
@@ -939,8 +957,8 @@ h6 {
   overflow: hidden;
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(0,0,0,0.05);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .logo-marquee-bar .marquee-track {
@@ -964,17 +982,24 @@ h6 {
 }
 
 @keyframes logoScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 768px) {
   .logo-marquee-bar {
     height: 35px;
   }
+
   .marquee-img {
     height: 18px;
   }
+
   .logo-marquee-bar .marquee-track {
     gap: 1rem;
   }
