@@ -26,16 +26,28 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Parallax effect for food items
+    // Parallax effect for food items, title, and lights
     const foodItems = document.querySelectorAll('.comp-item');
+    const heroTitle = document.querySelector('.hero-title');
+    const heroLights = document.querySelectorAll('.hero-light');
     
     function updateParallax() {
         const scrollY = window.scrollY;
         
+        // Food items parallax
         foodItems.forEach((item, index) => {
-            // Different scroll parallax speed for each item to create depth
             const scrollSpeed = (index % 3 + 1) * 0.15;
             item.style.transform = `translateY(${scrollY * scrollSpeed}px)`;
+        });
+
+        // Hero title parallax (moves slower than scroll)
+        if (heroTitle) {
+            heroTitle.style.transform = `translateY(${scrollY * 0.4}px)`;
+        }
+
+        // Hanging lights parallax (moves even slower for depth)
+        heroLights.forEach(light => {
+            light.style.transform = `translateY(${scrollY * 0.2}px)`;
         });
     }
     
