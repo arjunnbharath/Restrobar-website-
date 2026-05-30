@@ -1,6 +1,6 @@
-# Restobar website
+# Zayro website
 
-A multi-page marketing site for a **restaurant and bar**: home story and visuals, food and drink menu, table booking, and contact. Layout is responsive for desktop and mobile.
+A multi-page marketing site for **Zayro** — a restaurant and bar: home story and visuals, food and drink menu, table booking, and contact. Layout is responsive for desktop and mobile.
 
 ## Pages
 
