@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="contact-page-root">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,7 +11,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Inter:wght@300;400;500;600&family=Sacramento&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./src/style.css" />
   <style>
     :root {
       --color-contact-bg: #0a0a0a;
@@ -20,7 +19,11 @@
       --color-accent: #ff6b00;
     }
 
-    body {
+    html.contact-page-root {
+      background-color: var(--color-contact-bg);
+    }
+
+    body.contact-page {
       background-color: var(--color-contact-bg);
       color: #fff;
       min-height: 100vh;
@@ -322,7 +325,7 @@
     }
 
     @media (max-width: 480px) {
-      body {
+      body.contact-page {
         align-items: flex-start;
         padding-top: 2rem;
       }
@@ -338,7 +341,7 @@
   </style>
 </head>
 
-<body>
+<body class="contact-page">
   <div class="contact-wrapper">
     <a href="index.html" class="close-btn">✕</a>
 
@@ -414,6 +417,7 @@
       </div>
     </div>
   </div>
+  <script type="module" src="./src/global-styles-entry.js"></script>
 </body>
 
 </html>

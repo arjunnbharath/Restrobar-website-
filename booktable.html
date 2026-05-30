@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="booking-page-root">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +10,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100..900&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./src/style.css" />
   <style>
     :root {
       --color-booking-bg: #0a0a0a;
@@ -18,7 +17,11 @@
       --color-input-text: #2d1b0d;
     }
 
-    body {
+    html.booking-page-root {
+      background-color: var(--color-booking-bg);
+    }
+
+    body.booking-page {
       background-color: var(--color-booking-bg);
       color: #fff;
       min-height: 100vh;
@@ -202,7 +205,7 @@
     }
 
     @media (max-width: 600px) {
-      body {
+      body.booking-page {
         align-items: flex-start;
         justify-content: flex-start;
         padding-top: max(1rem, env(safe-area-inset-top));
@@ -304,7 +307,7 @@
   </style>
 </head>
 
-<body>
+<body class="booking-page">
   <div class="booking-wrapper">
     <a href="index.html" class="close-btn">✕</a>
 
@@ -365,6 +368,7 @@
       </div>
     </form>
   </div>
+  <script type="module" src="./src/global-styles-entry.js"></script>
 </body>
 
 </html>
